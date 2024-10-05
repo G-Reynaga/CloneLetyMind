@@ -1,0 +1,52 @@
+---
+import Facebbok from "@/icon/Facebbok.astro";
+import Instagram from "@/icon/Instagram.astro";
+import LinkedIn from "@/icon/LinkedIn.astro";
+import LogoLety from "@/icon/LogoLety.astro";
+---
+
+<footer class="bg-[#07212C]">
+    <div class="w-full max-w-screen-lg mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <div>
+                <a
+                    href="/"
+                    class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+                >
+                    <LogoLety />
+                </a>
+                <div class="flex p-6 gap-6">
+                    <Facebbok class="size-7 text-white hover:text-green-500" />
+                    <Instagram class="size-7 text-white hover:text-green-500" />
+                    <LinkedIn class="size-7 text-white hover:text-green-500" />
+                </div>
+            </div>
+            <div>
+                <h1 class="text-2xl pb-2">Recursos</h1>
+                <ul
+                    class="flex flex-col flex-wrap mb-6 text-md font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+                >
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6"
+                            >Políticas de privacidad</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6"
+                            >Términos y condiciones</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr
+            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span
+            class="block text-md text-gray-500 sm:text-center dark:text-gray-400"
+            >© 2024 <a href="/https://letymind.com/" class="hover:underline"
+                >Lety™</a
+            >. Inspirado por Letymind.</span
+        >
+    </div>
+</footer>

@@ -1,0 +1,73 @@
+---
+import IconProhibido from "@/icon/Prohibido.astro";
+import IconCheck from "@/icon/Check.astro";
+
+const Versus = [
+    {
+        title: "Suscripción por horas",
+        other: false,
+        letyMind: true,
+    },
+    {
+        title: "Especialidad en industria creativa",
+        other: false,
+        letyMind: true,
+    },
+    {
+        title: "Enfoque en la afinidad",
+        other: false,
+        letyMind: true,
+    },
+    {
+        title: "Selección de talentos rigurosa",
+        other: false,
+        letyMind: true,
+    },
+    {
+        title: "Diversidad de seniority",
+        other: true,
+        letyMind: true,
+    },
+    {
+        title: "Contratación de equipos y grupos",
+        other: true,
+        letyMind: true,
+    },
+];
+---
+
+<div class="flex justify-center">
+    <table class="table-auto w-3/4 sm:w-10/12">
+        <thead class="text-xl text-sky-500">
+            <tr>
+                <th class="text-start">Características</th>
+                <th>Otras plataformas</th>
+                <th>LetyMind</th>
+            </tr>
+        </thead>
+        <tbody class="[&>tr>td]:p-4 text-sm">
+            {
+                Versus.map(({ title, other, letyMind }) => (
+                    <tr class="even:bg-transparent odd:bg-[#07212C] text-lg">
+                        <td class="text-start">{title}</td>
+                        <td class="text-center">
+                            {other ? (
+                                <IconCheck class="w-8 h-8" />
+                            ) : (
+                                <IconProhibido class="w-8 h-8" />
+                            )}
+                        </td>
+                        <td class="text-center">
+                            {letyMind ? (
+                                <IconCheck class="w-8 h-8" />
+                            ) : (
+                                <IconProhibido class="w-8 h-8" />
+                            )}
+                        </td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+</div>
+

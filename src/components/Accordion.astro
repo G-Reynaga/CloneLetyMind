@@ -1,0 +1,148 @@
+---
+const Questions = [
+    {
+        title: "¿Qué es el modelo TaaS (Talent as a service)?",
+        body: `Es un modelo que se centra en proporcionar acceso a talentos
+                altamente cualificados de manera flexible y eficiente. En
+                LetyMind, nos especializamos en talentos creativos de diversos
+                niveles de experiencia, a los cuales puedes acceder bajo una
+                suscripción mensual por horas.`,
+    },
+    {
+        title: "¿Cómo selecciona LetyMind a sus talentos creativos?",
+        body: `En primer lugar, atraemos talento a nuestra plataforma mediante
+                convocatorias y un proceso riguroso de selección basado en
+                habilidades, experiencia, actitud y calidad del trabajo. Una vez
+                aceptados, conectamos a los talentos con clientes y almacenamos
+                sus preferencias e historial para encontrar la mejor
+                coincidencia con empresas. Así, aseguramos que obtengas el mejor
+                talento disponible.`,
+    },
+    {
+        title: "¿Qué tipo de talentos se pueden encontrar en LetyMind y de qué niveles?",
+        body: `En LetyMind, puedes acceder a una variedad de talentos
+                creativos, desde diseñadores y editores audiovisuales hasta
+                redactores de contenidos, en diferentes niveles de experiencia.`,
+    },
+    {
+        title: "¿Cuál es el rango mínimo y máximo de horas que puedo adquirir en una suscripción?",
+        body: `En LetyMind, a través de nuestra suscripción, tienes la opción
+                de acceder a un talento por un mínimo de 40 horas al mes, las
+                cuales puedes distribuir según tus necesidades. El máximo
+                permitido es de 80 horas al mes.`,
+    },
+    {
+        title: "¿Qué sucede si quedan horas no utilizadas en mi suscripción mensual?",
+        body: `Si no utilizas todas las horas incluidas en tu suscripción de
+                LetyMind, estas se convierten en crédito que se almacena en tu
+                LetyCash, un monedero virtual. Este saldo puede ser utilizado
+                para adquirir servicios adicionales que complementen tu
+                suscripción.`,
+    },
+    {
+        title: "¿Es posible conectar con equipos completos de talentos o solo se conectan individualmente?",
+        body: `En LetyMind, puedes conectar con talentos creativos
+                individualmente o formar equipos completos para proyectos más
+                amplios y complejos, ofreciéndote flexibilidad y asegurando que
+                cuentas con el conjunto adecuado de habilidades para tu
+                proyecto.`,
+    },
+];
+---
+
+{
+    Questions.map(({ title, body }, index) => {
+        const accordionId = `accordion-collapse-${index}`;
+        const accordionButtonId = `accordion-button-${index}`;
+        return (
+            <div id={accordionId} data-accordion="collapse" class="text-xl p-2">
+                <h2 id={accordionButtonId}>
+                    <button
+                        type="button"
+                        class="flex items-center justify-between w-full p-5 text-start font-medium bg-[#07212C] hover:text-teal-400 rounded-t-xl gap-3"
+                        data-accordion-target={`#${accordionId}-body`}
+                        aria-expanded="false"
+                        aria-controls={`${accordionId}-body`}
+                    >
+                        <span>{title}</span>
+                        <svg
+                            data-accordion-icon
+                            class="w-3 h-3 rotate-180 shrink-0"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 10 6"
+                        >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5 5 1 1 5"
+                            />
+                        </svg>
+                    </button>
+                </h2>
+                <div
+                    id={`${accordionId}-body`}
+                    class="max-h-0 overflow-hidden transition-all duration-700 ease-in-out"
+                    aria-labelledby={accordionButtonId}
+                >
+                    <div class="p-5 rounded-b-lg bg-[#07212C]">
+                        <p class="mb-2 text-start">{body}</p>
+                    </div>
+                </div>
+            </div>
+        );
+    })
+}
+
+<script is:inline>
+    function initializeAccordion() {
+        const accordionButtons = document.querySelectorAll(
+            "[data-accordion-target]",
+        );
+
+        accordionButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const target = button.getAttribute("data-accordion-target");
+                const content = document.querySelector(target);
+                const isExpanded =
+                    button.getAttribute("aria-expanded") === "true";
+
+                accordionButtons.forEach((btn) => {
+                    const otherTarget = btn.getAttribute(
+                        "data-accordion-target",
+                    );
+                    const otherContent = document.querySelector(otherTarget);
+
+                    if (otherContent && otherContent !== content) {
+                        otherContent.classList.remove("max-h-40");
+                        otherContent.classList.add("max-h-0");
+                        btn.setAttribute("aria-expanded", "false");
+                        const otherIcon = btn.querySelector("svg");
+                        otherIcon?.classList.remove("rotate-180");
+                    }
+                });
+
+                if (content) {
+                    if (isExpanded) {
+                        content.classList.remove("max-h-40");
+                        content.classList.add("max-h-0");
+                    } else {
+                        content.classList.remove("max-h-0");
+                        content.classList.add("max-h-40");
+                    }
+                    button.setAttribute(
+                        "aria-expanded",
+                        (!isExpanded).toString(),
+                    );
+                    const icon = button.querySelector("svg");
+                    icon?.classList.toggle("rotate-180");
+                }
+            });
+        });
+    }
+
+    initializeAccordion();
+</script>
