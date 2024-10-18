@@ -172,7 +172,9 @@ import Accordion from "@/components/Accordion.astro";
 			</div>
 		</section>
 
-		<section class="flex md:flex-row flex-col gap-10 justify-center items-center">
+		<section
+			class="flex md:flex-row flex-col gap-10 justify-center items-center"
+		>
 			<div class="space-y-4">
 				<span class="text-green-500 text-lg font-bold"
 					>¿Cómo empiezo?</span
@@ -277,14 +279,16 @@ import Accordion from "@/components/Accordion.astro";
 						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg w-full md:w-60"
+							class="notices w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/05/Comercio_logo_2-1024x1024.webp"
 							alt="Diario El Comercio"
 						/>
 						<div
 							class="flex flex-col justify-between p-4 leading-normal"
 						>
-							<h5 class="mb-2 text-xl text-start font-bold tracking-tight">
+							<h5
+								class="mb-2 text-xl text-start font-bold tracking-tight"
+							>
 								Diario El Comercio
 							</h5>
 							<p class="mb-3 font-normal text-start text-lg">
@@ -317,14 +321,16 @@ import Accordion from "@/components/Accordion.astro";
 						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg w-full md:w-60"
+							class="notices w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/07/infomercado_logo_cuadro-1024x1024.webp"
 							alt="Mercado negro"
 						/>
 						<div
 							class="flex flex-col justify-between p-4 leading-normal"
 						>
-							<h5 class="mb-2 text-xl text-start font-bold tracking-tight">
+							<h5
+								class="mb-2 text-xl text-start font-bold tracking-tight"
+							>
 								Mercado negro
 							</h5>
 							<p class="mb-3 font-normal text-start text-lg">
@@ -357,7 +363,7 @@ import Accordion from "@/components/Accordion.astro";
 						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg w-full md:w-60"
+							class="notices w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/05/Agencia-peruanas-de-noticias_logo_1-1024x1024.webp"
 							alt="Andina"
 						/>
@@ -400,7 +406,7 @@ import Accordion from "@/components/Accordion.astro";
 						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg w-full md:w-60"
+							class="notices w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/05/infomercado_logo_1-1024x1024.webp"
 							alt="InfoMercado"
 						/>
@@ -456,3 +462,17 @@ import Accordion from "@/components/Accordion.astro";
 		</section>
 	</main>
 </Layout>
+
+<style>
+	.notices {
+		border-top-left-radius: 0.5rem; /* Ajusta según sea necesario */
+		border-top-right-radius: 0.5rem; /* Ajusta según sea necesario */
+	}
+	@media (min-width: 768px) {
+		.notices {
+			border-top-left-radius: .5rem;
+			border-bottom-left-radius: .5rem;
+			border-top-right-radius: 0;
+		}
+	}
+</style>
