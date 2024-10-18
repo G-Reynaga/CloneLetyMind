@@ -8,7 +8,7 @@ import Accordion from "@/components/Accordion.astro";
 ---
 
 <Layout title="LetyMind">
-	<main class="max-w-5xl space-y-80 py-12">
+	<main class="max-w-full md:max-w-5xl space-y-80 py-12 px-2">
 		<section
 			class="flex flex-col md:flex-row gap-10 justify-center items-center md:py-24"
 		>
@@ -34,26 +34,27 @@ import Accordion from "@/components/Accordion.astro";
 			/>
 		</section>
 
-		<section class="flex gap-10 justify-center items-center">
+		<section
+			class="flex flex-col-reverse md:flex-row gap-6 justify-center items-center px-4"
+		>
 			<img
 				src="https://letymind.com/wp-content/uploads/2023/07/Group-of-talent-2-1024x926.webp"
 				alt="Quiénes somos"
-				height="488px"
-				width="540px"
+				class="w-full max-w-md h-auto"
 			/>
-			<div class="space-y-4">
+			<div class="space-y-4 text-center md:text-left">
 				<span class="text-green-500 text-lg font-bold"
 					>¿Quiénes somos?</span
 				>
-				<h1 class="text-4xl font-semibold">
+				<h1 class="text-3xl md:text-4xl font-semibold">
 					Creamos el futuro del trabajo
 				</h1>
-				<p class="text-lg">
+				<p class="text-base md:text-lg">
 					LetyMind es una plataforma TaaS (Talent as a Service) que
 					conecta talentos creativos con empresas bajo un modelo de
 					suscripción mensual por horas.
 				</p>
-				<p class="text-lg">
+				<p class="text-base md:text-lg">
 					Actuamos como intermediarios para hacer más eficiente la
 					conexión con profesionales en creación de contenidos,
 					enfocándonos en un modelo de reclutamiento progresivo y
@@ -64,15 +65,15 @@ import Accordion from "@/components/Accordion.astro";
 
 		<section class="py-16">
 			<div
-				class="flex flex-col justify-center items-center space-y-4 absolute w-full right-0 bg-[#07212C] py-8"
+				class="absolute flex flex-col justify-center items-center space-y-4 w-full right-0 bg-[#07212C] py-8 px-4 md:px-0"
 			>
-				<span class="text-green-500 text-lg font-bold"
-					>¿Quiénes nos respaldan?
+				<span class="text-green-500 text-lg md:text-xl font-bold">
+					¿Quiénes nos respaldan?
 				</span>
-				<h1 class="text-4xl font-semibold">
+				<h1 class="text-3xl md:text-4xl font-semibold text-center">
 					Empresas que confían en nosotros
 				</h1>
-				<div class="flex gap-8 justify-center items-center">
+				<div class="flex flex-wrap gap-4 justify-center items-center">
 					<LogoProInnovate class="size-44" />
 					<LogoStartUp class="size-44" />
 					<LogoCentryClass class="size-44" />
@@ -82,16 +83,18 @@ import Accordion from "@/components/Accordion.astro";
 
 		<section class="pt-60">
 			<div class="flex flex-col justify-center items-center space-y-4">
-				<span class="text-green-500 text-lg font-bold"
-					>¿Qué te ofrece LetyMind?</span
-				>
-				<h1 class="text-4xl font-semibold">
+				<span class="text-green-500 text-lg md:text-xl font-bold">
+					¿Qué te ofrece LetyMind?
+				</span>
+				<h1 class="text-3xl md:text-4xl font-semibold text-center">
 					Conoce más de nuestro servicio
 				</h1>
-				<div class="flex gap-8 justify-center items-center pt-16">
+				<div
+					class="flex flex-col md:flex-row gap-8 justify-center items-center pt-8 md:pt-16"
+				>
 					<!-- Tarjeta 1 -->
 					<div
-						class="border-2 border-white rounded-3xl text-center w-80 hover:shadow-lg hover:shadow-white transition duration-300"
+						class="border-2 border-white rounded-3xl text-center w-full md:w-80 hover:shadow-lg hover:shadow-white transition duration-300"
 					>
 						<img
 							class="rounded-t-3xl"
@@ -112,7 +115,7 @@ import Accordion from "@/components/Accordion.astro";
 
 					<!-- Tarjeta 2 -->
 					<div
-						class="border-2 border-green-400 rounded-3xl text-center w-80 hover:shadow-lg hover:shadow-green-400 transition duration-300"
+						class="border-2 border-green-400 rounded-3xl text-center w-full md:w-80 hover:shadow-lg hover:shadow-green-400 transition duration-300"
 					>
 						<img
 							class="rounded-t-3xl"
@@ -133,7 +136,7 @@ import Accordion from "@/components/Accordion.astro";
 
 					<!-- Tarjeta 3 -->
 					<div
-						class="border-2 border-sky-400 rounded-3xl text-center w-80 hover:shadow-lg hover:shadow-sky-400 transition duration-300"
+						class="border-2 border-sky-400 rounded-3xl text-center w-full md:w-80 hover:shadow-lg hover:shadow-sky-400 transition duration-300"
 					>
 						<img
 							class="rounded-t-3xl"
@@ -156,7 +159,9 @@ import Accordion from "@/components/Accordion.astro";
 		</section>
 
 		<section>
-			<div class="flex flex-col justify-center text-center space-y-4">
+			<div
+				class="hidden md:flex flex-col justify-center text-center space-y-4"
+			>
 				<span class="text-green-500 text-lg font-bold"
 					>¿Por qué elegir LetyMind?</span
 				>
@@ -167,7 +172,7 @@ import Accordion from "@/components/Accordion.astro";
 			</div>
 		</section>
 
-		<section class="flex gap-10 justify-center items-center">
+		<section class="flex md:flex-row flex-col gap-10 justify-center items-center">
 			<div class="space-y-4">
 				<span class="text-green-500 text-lg font-bold"
 					>¿Cómo empiezo?</span
@@ -251,8 +256,7 @@ import Accordion from "@/components/Accordion.astro";
 			<img
 				src="https://letymind.com/wp-content/uploads/elementor/thumbs/cliente-01-q9gt40x3dpvq87ytyxpclefdnwby0u2vwojbo5vp5g.webp"
 				alt="Quiénes somos"
-				height="488px"
-				width="540px"
+				class="w-full max-w-sm h-auto pt-16"
 			/>
 		</section>
 
@@ -265,31 +269,30 @@ import Accordion from "@/components/Accordion.astro";
 					Conoce los medios donde salimos
 				</h1>
 
-				<!-- Grid de 4 columnas -->
 				<div
 					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
 				>
 					<!-- Tarjeta 1 -->
 					<div
-						class="flex items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
+						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg h-60"
+							class="rounded-s-lg w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/05/Comercio_logo_2-1024x1024.webp"
 							alt="Diario El Comercio"
 						/>
 						<div
 							class="flex flex-col justify-between p-4 leading-normal"
 						>
-							<h5 class="mb-2 text-2xl font-bold tracking-tight">
+							<h5 class="mb-2 text-xl text-start font-bold tracking-tight">
 								Diario El Comercio
 							</h5>
-							<p class="mb-3 font-normal text-start text-xl">
+							<p class="mb-3 font-normal text-start text-lg">
 								Jóvenes empresarios: Talentos a su servicio
 							</p>
 							<a
 								href="#"
-								class="inline-flex justify-end items-center px-3 py-2 text-xl font-medium text-center hover:underline"
+								class="inline-flex justify-end items-center px-3 pt-6 text-xl font-medium text-center hover:underline"
 							>
 								Ver más
 								<svg
@@ -311,25 +314,25 @@ import Accordion from "@/components/Accordion.astro";
 					</div>
 
 					<div
-						class="flex items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
+						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg h-60"
+							class="rounded-s-lg w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/07/infomercado_logo_cuadro-1024x1024.webp"
 							alt="Mercado negro"
 						/>
 						<div
 							class="flex flex-col justify-between p-4 leading-normal"
 						>
-							<h5 class="mb-2 text-2xl font-bold tracking-tight">
+							<h5 class="mb-2 text-xl text-start font-bold tracking-tight">
 								Mercado negro
 							</h5>
-							<p class="mb-3 font-normal text-start text-xl">
+							<p class="mb-3 font-normal text-start text-lg">
 								El emprendimiento que ganó Startup Perú 10G
 							</p>
 							<a
 								href="#"
-								class="inline-flex justify-end items-center px-3 py-2 text-xl font-medium text-center hover:underline"
+								class="inline-flex justify-end items-center px-3 pt-6 text-xl font-medium text-center hover:underline"
 							>
 								Ver más
 								<svg
@@ -351,10 +354,10 @@ import Accordion from "@/components/Accordion.astro";
 					</div>
 
 					<div
-						class="flex items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
+						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg h-60"
+							class="rounded-s-lg w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/05/Agencia-peruanas-de-noticias_logo_1-1024x1024.webp"
 							alt="Andina"
 						/>
@@ -362,17 +365,17 @@ import Accordion from "@/components/Accordion.astro";
 							class="flex flex-col justify-between p-4 leading-normal"
 						>
 							<h5
-								class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+								class="mb-2 text-xl text-start font-bold tracking-tight text-gray-900 dark:text-white"
 							>
 								Andina
 							</h5>
-							<p class="mb-3 font-normal text-start text-xl">
+							<p class="mb-3 font-normal text-start text-lg">
 								Modelo de contratación TaaS busca revolucionar
 								mercado laboral
 							</p>
 							<a
 								href="#"
-								class="inline-flex justify-end items-center px-3 py-2 text-xl font-medium text-center hover:underline"
+								class="inline-flex justify-end items-center px-3 pt-6 text-xl font-medium text-center hover:underline"
 							>
 								Ver más
 								<svg
@@ -394,10 +397,10 @@ import Accordion from "@/components/Accordion.astro";
 					</div>
 
 					<div
-						class="flex items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
+						class="flex md:flex-row flex-col items-center bg-[#07212C] hover:border hover:border-gray-200 rounded-lg"
 					>
 						<img
-							class="rounded-s-lg h-60"
+							class="rounded-s-lg w-full md:w-60"
 							src="https://letymind.com/wp-content/uploads/2024/05/infomercado_logo_1-1024x1024.webp"
 							alt="InfoMercado"
 						/>
@@ -405,17 +408,17 @@ import Accordion from "@/components/Accordion.astro";
 							class="flex flex-col justify-between p-4 leading-normal"
 						>
 							<h5
-								class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+								class="mb-2 text-xl text-start font-bold tracking-tight text-gray-900 dark:text-white"
 							>
 								InfoMercado
 							</h5>
-							<p class="mb-3 font-normal text-start text-xl">
+							<p class="mb-3 font-normal text-start text-lg">
 								Andy Erazo: «Buscamos ser el proveedor de
 								talentos creativos …»
 							</p>
 							<a
 								href="#"
-								class="inline-flex justify-end items-center px-3 py-2 text-xl font-medium text-center hover:underline"
+								class="inline-flex justify-end items-center px-3 pt-6 text-xl font-medium text-center hover:underline"
 							>
 								Ver más
 								<svg
