@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar.astro";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import "@fontsource-variable/montserrat";
 import Particle from "@/components/Particle.astro";
+import Alert from "@/components/Alert.astro";
 
 interface Props {
 	title: string;
@@ -29,6 +30,7 @@ const { pathname } = Astro.url;
 		<ViewTransitions />
 	</head>
 	<body class="bg-[#021821] text-white">
+		<Alert />
 		<Navbar />
 		<div class="absolute">
 			<Particle />
