@@ -1,0 +1,49 @@
+---
+import Particles from "astro-particles";
+import type { ISourceOptions } from "tsparticles-engine";
+
+const options: ISourceOptions = {
+    particles: {
+        number: {
+            value: 150,
+        },
+        color: {
+            value: "#2bcfcf80",
+        },
+        move: {
+            enable: true,
+            speed: 0.25,
+        },
+        size: {
+            value: 2.5,
+        },
+        opacity: {
+            value: 1,
+            random: true,
+            animation: {
+                enable: true,
+                speed: 1.5,
+            },
+        },
+    },
+    style: {
+        position: "absolute",
+    },
+    detectRetina: true,
+};
+---
+
+<script>
+    import { type Container, type Engine } from "tsparticles-engine";
+    import { loadFull } from "tsparticles";
+
+    window.particlesInit = async function (engine: Engine) {
+        await loadFull(engine);
+    };
+
+    window.particlesLoaded = function (container: Container) {
+        console.log("particlesLoaded callback");
+    };
+</script>
+
+<Particles id="tsparticles" options={options} init="particlesInit" />

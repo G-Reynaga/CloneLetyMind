@@ -3,6 +3,7 @@ import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import "@fontsource-variable/montserrat";
+import Particle from "@/components/Particle.astro";
 
 interface Props {
 	title: string;
@@ -29,6 +30,9 @@ const { pathname } = Astro.url;
 	</head>
 	<body class="bg-[#021821] text-white">
 		<Navbar />
+		<div class="absolute">
+			<Particle />
+		</div>
 		<div class="flex items-center justify-center">
 			<slot />
 		</div>
@@ -39,5 +43,23 @@ const { pathname } = Astro.url;
 <style>
 	body {
 		font-family: "Montserrat Variable", sans-serif;
+	}
+
+	body::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 0%;
+		width: 120rem;
+		height: 50rem;
+		background-color: transparent;
+		background-image: radial-gradient(
+			at center right,
+			#2bcfcf80 0%,
+			#021822 60%
+		);
+		transform: translateY(-50%);
+		pointer-events: none;
+		z-index: -1;
 	}
 </style>
